@@ -29,6 +29,8 @@ def planejarCardapio(conn):
         print('')
         print(receita)
         print()
-    # nome = int(input('Digite o ID da receita: '))
 
-
+    busca = int(input('Digite o id da receita: '))
+    cursor.execute('SELECT *FROM receitas WHERE id = %s',(busca,))
+    teste = cursor.fetchone()
+    print(teste)
