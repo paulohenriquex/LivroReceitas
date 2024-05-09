@@ -34,3 +34,4 @@ def planejarCardapio(conn):
     cursor.execute('SELECT *FROM receitas WHERE id = %s',(busca,))
     teste = cursor.fetchone()
     print(teste)
+    print('teste 2')
