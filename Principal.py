@@ -23,6 +23,7 @@ def criarTabelas(conn):
     cursor.execute('CREATE TABLE IF NOT EXISTS produtos (id SERIAL PRIMARY KEY,nome VARCHAR(100),preco FLOAT, quantidade FLOAT, medida VARCHAR(10))')
     cursor.execute('CREATE TABLE IF NOT EXISTS receitas (id SERIAL PRIMARY KEY,nome VARCHAR(100))')
     cursor.execute('CREATE TABLE IF NOT EXISTS ingredienteReceita (id SERIAL PRIMARY KEY,idProduto INTEGER REFERENCES produtos(id),idReceita INTEGER REFERENCES receitas(id), percapta FLOAT)')
+    cursor.execute('CREATE TABLE IF NOT EXISTS planejamento(id SERIAL PRIMARY KEY, idReceita int REFERENCES receitas(id),data DATE)')
     conn.commit()
 
 def main(conn):
